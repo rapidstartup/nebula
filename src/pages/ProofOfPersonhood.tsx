@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeft, Shield, Key, Users, AlertTriangle, CheckCircle } from 'lucide-react';
+import { ArrowLeft, Shield, Key, AlertTriangle, CheckCircle } from 'lucide-react';
 
 export const ProofOfPersonhood: React.FC = () => {
   return (

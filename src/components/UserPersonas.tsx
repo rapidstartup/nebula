@@ -1,5 +1,5 @@
 import React from 'react';
-import { User, Briefcase, GraduationCap, Users } from 'lucide-react';
+import { User, Briefcase, GraduationCap } from 'lucide-react';
 
 export const UserPersonas: React.FC = () => {
   const personas = [
