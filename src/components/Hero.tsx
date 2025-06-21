@@ -9,6 +9,16 @@ export const Hero: React.FC = () => {
     setIsQRModalOpen(true);
   };
 
+  const handleExploreResources = () => {
+    const resourcesSection = document.getElementById('resources');
+    if (resourcesSection) {
+      resourcesSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <>
       <section className="min-h-screen flex items-center justify-center px-6 relative">
@@ -48,7 +58,10 @@ export const Hero: React.FC = () => {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
               
-              <button className="glass-effect px-8 py-4 rounded-full font-semibold text-white hover-lift border border-purple-500/30 hover:border-purple-400/50 transition-all">
+              <button 
+                onClick={handleExploreResources}
+                className="glass-effect px-8 py-4 rounded-full font-semibold text-white hover-lift border border-purple-500/30 hover:border-purple-400/50 transition-all"
+              >
                 Explore Resources
               </button>
             </div>
