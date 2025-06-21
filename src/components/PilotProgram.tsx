@@ -138,5 +138,6 @@ export const PilotProgram: React.FC = () => {
         </div>
       </div>
     </section>
+  )
   );
 };
