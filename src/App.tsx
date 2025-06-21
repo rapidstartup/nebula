@@ -1,6 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Hero } from './components/Hero';
+import { PilotProgram } from './components/PilotProgram';
+import { UserPersonas } from './components/UserPersonas';
+import { EconomicModel } from './components/EconomicModel';
+import { FunctionalRequirements } from './components/FunctionalRequirements';
 import { ResourceCenter } from './components/ResourceCenter';
 import { Features } from './components/Features';
 import { Footer } from './components/Footer';
@@ -19,6 +23,10 @@ function HomePage() {
       <CosmicBackground />
       <div className="relative z-10">
         <Hero />
+        <PilotProgram />
+        <UserPersonas />
+        <EconomicModel />
+        <FunctionalRequirements />
         <ResourceCenter />
         <Features />
         <Footer />
