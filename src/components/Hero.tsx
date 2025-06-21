@@ -21,7 +21,7 @@ export const Hero: React.FC = () => {
 
   return (
     <>
-      <section className="min-h-screen flex items-center justify-center px-6 relative">
+      <section id="home" className="min-h-screen flex items-center justify-center px-6 relative pt-20">
         <div className="max-w-6xl mx-auto text-center">
           {/* Cosmic orb decoration */}
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-10">
@@ -43,15 +43,15 @@ export const Hero: React.FC = () => {
             </p>
             
             <p className="text-lg text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Experience the future of digital innovation through our revolutionary cosmic app. 
-              Explore unlimited possibilities and connect with a universe of features designed to transform your workflow.
+              Experience the future of digital democracy through our revolutionary cosmic platform. 
+              Explore unlimited possibilities and connect with a universe of governance tools designed to empower communities.
             </p>
             
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <button 
                 onClick={handleLaunchApp}
-                className="group nebula-gradient px-8 py-4 rounded-full font-semibold text-white hover-lift flex items-center gap-3 text-lg"
+                className="group nebula-gradient px-8 py-4 rounded-full font-semibold text-white hover-lift flex items-center gap-3 text-lg transition-all duration-300 hover:scale-105"
               >
                 <Download className="w-5 h-5 group-hover:animate-bounce" />
                 Launch App
@@ -60,7 +60,7 @@ export const Hero: React.FC = () => {
               
               <button 
                 onClick={handleExploreResources}
-                className="glass-effect px-8 py-4 rounded-full font-semibold text-white hover-lift border border-purple-500/30 hover:border-purple-400/50 transition-all"
+                className="glass-effect px-8 py-4 rounded-full font-semibold text-white hover-lift border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300 hover:scale-105"
               >
                 Explore Resources
               </button>

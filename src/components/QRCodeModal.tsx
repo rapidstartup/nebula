@@ -46,7 +46,18 @@ export const QRCodeModal: React.FC<QRCodeModalProps> = ({ isOpen, onClose }) => 
             src="/Screenshot_20250622-051520.png" 
             alt="QR Code for Nebula Mobile App"
             className="w-full h-auto"
+            onError={(e) => {
+              // Fallback if image doesn't exist
+              e.currentTarget.style.display = 'none';
+              e.currentTarget.nextElementSibling!.style.display = 'flex';
+            }}
           />
+          <div className="hidden w-full h-48 items-center justify-center bg-gray-100 rounded">
+            <div className="text-gray-500 text-center">
+              <Smartphone className="w-12 h-12 mx-auto mb-2" />
+              <p className="text-sm">QR Code Coming Soon</p>
+            </div>
+          </div>
         </div>
 
         {/* Instructions */}

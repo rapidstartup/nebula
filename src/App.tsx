@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Navigation } from './components/Navigation';
 import { Hero } from './components/Hero';
 import { PilotProgram } from './components/PilotProgram';
 import { UserPersonas } from './components/UserPersonas';
@@ -22,6 +23,7 @@ function HomePage() {
     <div className="min-h-screen bg-gray-900 text-white relative overflow-hidden">
       <CosmicBackground />
       <div className="relative z-10">
+        <Navigation />
         <Hero />
         <PilotProgram />
         <UserPersonas />
