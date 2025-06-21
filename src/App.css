@@ -51,6 +51,30 @@ body {
   animation: spin-slow 20s linear infinite;
 }
 
+/* Animation for modal entrance */
+@keyframes zoom-in-95 {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-in {
+  animation-fill-mode: both;
+}
+
+.zoom-in-95 {
+  animation-name: zoom-in-95;
+}
+
+.duration-200 {
+  animation-duration: 200ms;
+}
+
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-20px); }
@@ -128,4 +152,16 @@ body {
 @keyframes gradient-shift {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
+}
+
+/* Ensure proper mobile button styling */
+@media (max-width: 640px) {
+  .nebula-gradient, .glass-effect {
+    min-height: 48px;
+    touch-action: manipulation;
+  }
+  
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
 }

@@ -9,16 +9,22 @@ interface QRCodeModalProps {
 export const QRCodeModal: React.FC<QRCodeModalProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
+  const handleBackdropClick = (e: React.MouseEvent) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
       {/* Backdrop */}
       <div 
-        className="absolute inset-0 bg-black/70 backdrop-blur-sm" 
-        onClick={onClose}
+        className="absolute inset-0 bg-black/80 backdrop-blur-sm" 
+        onClick={handleBackdropClick}
       />
       
       {/* Modal */}
-      <div className="relative bg-black/90 backdrop-blur-lg border border-purple-500/30 rounded-2xl p-8 max-w-md mx-4 text-center">
+      <div className="relative bg-black/95 backdrop-blur-lg border border-purple-500/30 rounded-2xl p-6 sm:p-8 max-w-sm w-full mx-4 text-center animate-in zoom-in-95 duration-200">
         {/* Close button */}
         <button
           onClick={onClose}
@@ -32,24 +38,28 @@ export const QRCodeModal: React.FC<QRCodeModalProps> = ({ isOpen, onClose }) => 
           <div className="w-16 h-16 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 p-3 mx-auto mb-4">
             <Smartphone className="w-full h-full text-white" />
           </div>
-          <h3 className="text-2xl font-bold text-white mb-2">
+          <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
             Get the Nebula Mobile App
           </h3>
-          <p className="text-gray-300">
+          <p className="text-gray-300 text-sm sm:text-base">
             Scan the QR code with your mobile device to access the DAO app
           </p>
         </div>
 
         {/* QR Code */}
-        <div className="bg-white p-6 rounded-xl mb-6 mx-auto max-w-xs">
+        <div className="bg-white p-4 sm:p-6 rounded-xl mb-6 mx-auto max-w-xs">
           <img 
             src="/Screenshot_20250622-051520.png" 
             alt="QR Code for Nebula Mobile App"
-            className="w-full h-auto"
+            className="w-full h-auto rounded"
             onError={(e) => {
               // Fallback if image doesn't exist
-              e.currentTarget.style.display = 'none';
-              e.currentTarget.nextElementSibling!.style.display = 'flex';
+              const target = e.currentTarget as HTMLImageElement;
+              target.style.display = 'none';
+              const fallback = target.nextElementSibling as HTMLElement;
+              if (fallback) {
+                fallback.style.display = 'flex';
+              }
             }}
           />
           <div className="hidden w-full h-48 items-center justify-center bg-gray-100 rounded">
