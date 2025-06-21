@@ -105,12 +105,8 @@ Lucide React for beautiful icons
 
 Explore our cosmic-themed interface and discover how democratic governance can be beautiful, intuitive, and powerful.
 
-### **🚀 Launch the App (Coming Soon)**
-The full Nebula platform will launch with the Swiss pilot program. Join our community to be notified:
-
-- 💬 **[Join Discord Community](#)** - Connect with fellow cosmic citizens
-- 📧 **[Subscribe to Updates](#)** - Get launch notifications
-- 🐦 **[Follow on Twitter](#)** - Latest news and developments
+### **📱 Try the Mobile DAO App**
+On the website, click "Launch App" to get a QR code that opens our mobile demonstration. Experience decentralized governance on your mobile device!
 
 ---
 
@@ -159,6 +155,7 @@ We welcome contributions! Please read our:
 - 🎭 Beautiful animations and micro-interactions
 - 📚 Comprehensive documentation system
 - 🛡️ Privacy-first architecture planning
+- 📱 Mobile DAO app demo with QR code access
 
 ### **🚧 In Development**
 - 🔐 Self-sovereign identity system
@@ -226,6 +223,7 @@ Our design philosophy draws inspiration from the vastness and beauty of space:
 
 ### **🎯 Phase 1: Foundation (Q2 2025)**
 - ✅ Website and documentation
+- ✅ Mobile app demo
 - 🔐 Identity system development
 - 🇨🇭 Swiss pilot program launch
 
@@ -236,7 +234,7 @@ Our design philosophy draws inspiration from the vastness and beauty of space:
 
 ### **🌍 Phase 3: Expansion (Q4 2025)**
 - 🌐 Multi-jurisdiction support
-- 📱 Mobile applications
+- 📱 Full mobile applications
 - 🔗 Government integrations
 
 ### **⭐ Phase 4: Advanced Features (2026)**
