@@ -1,5 +1,5 @@
 import React from 'react';
-import { Book, Video, Users, Code, Newspaper, HelpCircle, Github, MessageCircle } from 'lucide-react';
+import { Book, Video, Users, Code, Github, MessageCircle } from 'lucide-react';
 
 const resources = [
   {

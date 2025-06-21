@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Users, Target, Calendar, TrendingUp, Globe } from 'lucide-react';
+import { MapPin, Target, Calendar } from 'lucide-react';
 
 export const PilotProgram: React.FC = () => {
   return (
@@ -61,7 +61,7 @@ export const PilotProgram: React.FC = () => {
                 <div className="text-gray-300">Platform uptime and reliability</div>
               </div>
               <div className="border-l-4 border-pink-400 pl-6">
-                <div className="text-2xl font-bold text-pink-400"><10 min</div>
+                <div className="text-2xl font-bold text-pink-400">{'<10 min'}</div>
                 <div className="text-gray-300">Time to create a new DAO</div>
               </div>
             </div>
@@ -138,6 +138,5 @@ export const PilotProgram: React.FC = () => {
         </div>
       </div>
     </section>
-  )
   );
 };
