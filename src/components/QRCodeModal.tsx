@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Smartphone, Download } from 'lucide-react';
+import { X, Smartphone, ExternalLink } from 'lucide-react';
 
 interface QRCodeModalProps {
   isOpen: boolean;
@@ -13,6 +13,10 @@ export const QRCodeModal: React.FC<QRCodeModalProps> = ({ isOpen, onClose }) => 
     if (e.target === e.currentTarget) {
       onClose();
     }
+  };
+
+  const handleDemoClick = () => {
+    window.open('https://nebula-decentralized-community-governance-app.rork.app', '_blank');
   };
 
   return (
@@ -49,7 +53,7 @@ export const QRCodeModal: React.FC<QRCodeModalProps> = ({ isOpen, onClose }) => 
         {/* QR Code */}
         <div className="bg-white p-4 sm:p-6 rounded-xl mb-6 mx-auto max-w-xs">
           <img 
-            src="/Screenshot_20250622-051520.png" 
+            src="/2025-06-22 16_13_18-Rork — vibe code a mobile app in minutes.png" 
             alt="QR Code for Nebula Mobile App"
             className="w-full h-auto rounded"
             onError={(e) => {
@@ -65,7 +69,7 @@ export const QRCodeModal: React.FC<QRCodeModalProps> = ({ isOpen, onClose }) => 
           <div className="hidden w-full h-48 items-center justify-center bg-gray-100 rounded">
             <div className="text-gray-500 text-center">
               <Smartphone className="w-12 h-12 mx-auto mb-2" />
-              <p className="text-sm">QR Code Coming Soon</p>
+              <p className="text-sm">QR Code Loading...</p>
             </div>
           </div>
         </div>
@@ -92,11 +96,14 @@ export const QRCodeModal: React.FC<QRCodeModalProps> = ({ isOpen, onClose }) => 
           </div>
         </div>
 
-        {/* Demo badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 bg-yellow-500/20 border border-yellow-400/30 rounded-full text-yellow-400 text-sm">
-          <Download className="w-4 h-4" />
-          <span>Demo Version</span>
-        </div>
+        {/* Direct link button */}
+        <button
+          onClick={handleDemoClick}
+          className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 border border-blue-500/30 rounded-full text-blue-100 transition-colors font-medium"
+        >
+          <ExternalLink className="w-4 h-4" />
+          <span>Direct Link To Demo</span>
+        </button>
       </div>
     </div>
   );
