@@ -1,5 +1,5 @@
 import React from 'react';
-import { Rocket, Github, Twitter, MessageCircle, Mail, ExternalLink, Book, Users2, Code, HelpCircle } from 'lucide-react';
+import { Rocket, Github, Twitter, MessageCircle, Mail, ExternalLink, Book, Users2, Code, HelpCircle, Bug, Lightbulb } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
@@ -51,10 +51,10 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <span className="text-gray-500 text-sm flex items-center gap-1">
+                <a href="/tutorials" className="text-gray-400 hover:text-purple-400 transition-colors flex items-center gap-1">
                   <Code className="w-4 h-4" />
-                  Tutorials <span className="text-xs">(Coming Soon)</span>
-                </span>
+                  Tutorials
+                </a>
               </li>
               <li>
                 <a href="https://github.com/nebula-gov" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-purple-400 transition-colors flex items-center gap-1">
@@ -64,10 +64,10 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <span className="text-gray-500 text-sm flex items-center gap-1">
+                <a href="/community" className="text-gray-400 hover:text-purple-400 transition-colors flex items-center gap-1">
                   <Users2 className="w-4 h-4" />
-                  Community <span className="text-xs">(Coming Soon)</span>
-                </span>
+                  Community
+                </a>
               </li>
               <li>
                 <a href="https://nebula-decentralized-community-governance-app.rork.app" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-purple-400 transition-colors flex items-center gap-1">
@@ -107,10 +107,18 @@ export const Footer: React.FC = () => {
             <a href="/code-of-conduct" className="text-gray-400 hover:text-purple-400 transition-colors text-sm">
               Conduct
             </a>
-            <span className="text-gray-500 text-sm flex items-center gap-1">
+            <a href="/support" className="text-gray-400 hover:text-purple-400 transition-colors text-sm flex items-center gap-1">
               <HelpCircle className="w-3 h-3" />
-              Support <span className="text-xs">(Coming Soon)</span>
-            </span>
+              Support
+            </a>
+            <a href="/contributing" className="text-gray-400 hover:text-purple-400 transition-colors text-sm flex items-center gap-1">
+              <Lightbulb className="w-3 h-3" />
+              Contribute
+            </a>
+            <a href="/issue-templates" className="text-gray-400 hover:text-purple-400 transition-colors text-sm flex items-center gap-1">
+              <Bug className="w-3 h-3" />
+              Report Issues
+            </a>
           </div>
         </div>
       </div>

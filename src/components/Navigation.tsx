@@ -44,6 +44,14 @@ export const Navigation: React.FC = () => {
     { label: 'Code of Conduct', path: '/code-of-conduct' }
   ];
 
+  const communityItems = [
+    { label: 'Tutorials', path: '/tutorials' },
+    { label: 'Support & Help', path: '/support' },
+    { label: 'Community Hub', path: '/community' },
+    { label: 'Contributing', path: '/contributing' },
+    { label: 'Issue Templates', path: '/issue-templates' }
+  ];
+
   return (
     <>
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -100,6 +108,28 @@ export const Navigation: React.FC = () => {
                   </div>
                 </div>
               </div>
+
+              {/* Community Dropdown */}
+              <div className="relative group">
+                <button className="text-gray-300 hover:text-white transition-colors text-sm font-medium">
+                  Community
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-pink-400 transition-all group-hover:w-full"></span>
+                </button>
+                
+                <div className="absolute top-full right-0 mt-2 w-48 bg-black/95 backdrop-blur-lg border border-purple-500/20 rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 shadow-2xl">
+                  <div className="p-2">
+                    {communityItems.map((item) => (
+                      <button
+                        key={item.label}
+                        onClick={() => navigateToPage(item.path)}
+                        className="w-full text-left px-3 py-2 text-gray-300 hover:text-white hover:bg-purple-500/10 rounded-lg transition-colors text-sm"
+                      >
+                        {item.label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Mobile Menu Button - Show on tablet and mobile */}
@@ -141,6 +171,19 @@ export const Navigation: React.FC = () => {
                 <div className="border-t border-purple-500/20 pt-4 mt-4">
                   <div className="text-gray-400 text-sm font-semibold px-4 py-2 mb-2">Documentation</div>
                   {documentationItems.map((item) => (
+                    <button
+                      key={item.label}
+                      onClick={() => navigateToPage(item.path)}
+                      className="w-full text-left px-4 py-3 text-gray-300 hover:text-white hover:bg-purple-500/10 rounded-xl transition-colors text-sm"
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </div>
+
+                <div className="border-t border-purple-500/20 pt-4 mt-4">
+                  <div className="text-gray-400 text-sm font-semibold px-4 py-2 mb-2">Community</div>
+                  {communityItems.map((item) => (
                     <button
                       key={item.label}
                       onClick={() => navigateToPage(item.path)}
