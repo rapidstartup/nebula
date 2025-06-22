@@ -1,5 +1,5 @@
 import React from 'react';
-import { Rocket, Github, Twitter, MessageCircle, Mail } from 'lucide-react';
+import { Rocket, Github, Twitter, MessageCircle, Mail, ExternalLink, Book, Users2, Code, HelpCircle } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
@@ -21,16 +21,19 @@ export const Footer: React.FC = () => {
             
             {/* Social links */}
             <div className="flex items-center gap-4 mt-6">
-              <a href="#" className="w-10 h-10 rounded-full bg-black/30 backdrop-blur-sm border border-purple-500/20 flex items-center justify-center hover:border-purple-400/50 transition-all">
+              <a href="https://github.com/nebula-gov" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-black/30 backdrop-blur-sm border border-purple-500/20 flex items-center justify-center hover:border-purple-400/50 transition-all">
                 <Github className="w-5 h-5 text-gray-400 hover:text-purple-400 transition-colors" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-black/30 backdrop-blur-sm border border-purple-500/20 flex items-center justify-center hover:border-purple-400/50 transition-all">
+              <a href="https://x.com/DaveShapi" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-black/30 backdrop-blur-sm border border-purple-500/20 flex items-center justify-center hover:border-purple-400/50 transition-all">
                 <Twitter className="w-5 h-5 text-gray-400 hover:text-purple-400 transition-colors" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-black/30 backdrop-blur-sm border border-purple-500/20 flex items-center justify-center hover:border-purple-400/50 transition-all">
-                <MessageCircle className="w-5 h-5 text-gray-400 hover:text-purple-400 transition-colors" />
+              <a href="https://x.com/LifeOnAutoSite" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-black/30 backdrop-blur-sm border border-purple-500/20 flex items-center justify-center hover:border-purple-400/50 transition-all">
+                <Twitter className="w-5 h-5 text-gray-400 hover:text-purple-400 transition-colors" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-black/30 backdrop-blur-sm border border-purple-500/20 flex items-center justify-center hover:border-purple-400/50 transition-all">
+              <a href="#" className="w-10 h-10 rounded-full bg-black/30 backdrop-blur-sm border border-purple-500/20 flex items-center justify-center hover:border-purple-400/50 transition-all opacity-50 cursor-not-allowed" title="Discord Community - Coming Soon">
+                <MessageCircle className="w-5 h-5 text-gray-400" />
+              </a>
+              <a href="mailto:contact@nebula.foundation" className="w-10 h-10 rounded-full bg-black/30 backdrop-blur-sm border border-purple-500/20 flex items-center justify-center hover:border-purple-400/50 transition-all">
                 <Mail className="w-5 h-5 text-gray-400 hover:text-purple-400 transition-colors" />
               </a>
             </div>
@@ -40,11 +43,38 @@ export const Footer: React.FC = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Resources</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">Documentation</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">Tutorials</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">Examples</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">Community</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">API Reference</a></li>
+              <li>
+                <a href="https://rapidstartup.gitbook.io/nebula/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-purple-400 transition-colors flex items-center gap-1">
+                  <Book className="w-4 h-4" />
+                  API Documentation
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              </li>
+              <li>
+                <span className="text-gray-500 text-sm flex items-center gap-1">
+                  <Code className="w-4 h-4" />
+                  Tutorials <span className="text-xs">(Coming Soon)</span>
+                </span>
+              </li>
+              <li>
+                <a href="https://github.com/nebula-gov" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-purple-400 transition-colors flex items-center gap-1">
+                  <Github className="w-4 h-4" />
+                  Code Examples
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              </li>
+              <li>
+                <span className="text-gray-500 text-sm flex items-center gap-1">
+                  <Users2 className="w-4 h-4" />
+                  Community <span className="text-xs">(Coming Soon)</span>
+                </span>
+              </li>
+              <li>
+                <a href="https://nebula-decentralized-community-governance-app.rork.app" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-purple-400 transition-colors flex items-center gap-1">
+                  <ExternalLink className="w-4 h-4" />
+                  Mobile Demo
+                </a>
+              </li>
             </ul>
           </div>
           
@@ -65,7 +95,7 @@ export const Footer: React.FC = () => {
         {/* Bottom section */}
         <div className="pt-8 border-t border-purple-900/30 flex flex-col md:flex-row items-center justify-between">
           <p className="text-gray-400 text-sm">
-            © 2025 Nebula. Shaping the cosmic future of democracy.
+            © 2025 Nebula Foundation. Shaping the cosmic future of democracy.
           </p>
           <div className="flex items-center gap-6 mt-4 md:mt-0">
             <a href="/terms-of-service" className="text-gray-400 hover:text-purple-400 transition-colors text-sm">
@@ -77,9 +107,10 @@ export const Footer: React.FC = () => {
             <a href="/code-of-conduct" className="text-gray-400 hover:text-purple-400 transition-colors text-sm">
               Conduct
             </a>
-            <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors text-sm">
-              Support
-            </a>
+            <span className="text-gray-500 text-sm flex items-center gap-1">
+              <HelpCircle className="w-3 h-3" />
+              Support <span className="text-xs">(Coming Soon)</span>
+            </span>
           </div>
         </div>
       </div>

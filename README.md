@@ -87,6 +87,11 @@ Lucide React for beautiful icons
 - 🔬 **[Proof of Personhood Whitepaper](https://nebula.rapidstartup.io/proof-of-personhood)** - Technical approach to Sybil resistance
 - 🧭 **[Philosophy & Principles](https://nebula.rapidstartup.io/philosophy)** - Ethical framework and decision-making guidelines
 
+### **Technical Documentation**
+- 🚀 **[API Documentation](https://rapidstartup.gitbook.io/nebula/)** - Complete API reference and integration guides
+- 💻 **[Developer Resources](https://rapidstartup.gitbook.io/nebula/)** - SDK, examples, and technical specifications
+- 🔧 **[Integration Guides](https://rapidstartup.gitbook.io/nebula/)** - How to integrate with Nebula platform
+
 ### **Legal & Governance**
 - ⚖️ **[Terms of Service](https://nebula.rapidstartup.io/terms-of-service)** - User rights and platform governance
 - 🛡️ **[Privacy Policy](https://nebula.rapidstartup.io/privacy-policy)** - Data protection and user sovereignty
@@ -109,6 +114,11 @@ Explore our cosmic-themed interface and discover how democratic governance can b
 👉 **[Demo Mobile App](https://nebula-decentralized-community-governance-app.rork.app)**
 
 Experience decentralized governance directly on your mobile device! You can also access this through the QR code on our website by clicking "Launch App".
+
+### **🔗 API & Integrations**
+👉 **[API Documentation](https://rapidstartup.gitbook.io/nebula/)**
+
+Start building with Nebula's powerful APIs and integration tools.
 
 ---
 
@@ -190,8 +200,9 @@ Our design philosophy draws inspiration from the vastness and beauty of space:
 ### **Join the Cosmic Democracy Movement**
 - 🌍 **[Official Website](https://nebula.rapidstartup.io)** - Learn about our vision
 - 📱 **[Demo Mobile App](https://nebula-decentralized-community-governance-app.rork.app)** - Experience governance on mobile
-- 💬 **[Discord Community](#)** - Daily discussions and support
-- 📧 **[Newsletter](#)** - Monthly updates and insights
+- 📚 **[API Documentation](https://rapidstartup.gitbook.io/nebula/)** - Technical resources and guides
+- 💬 **[Discord Community](#)** - Daily discussions and support *(Coming Soon)*
+- 📧 **[Newsletter](#)** - Monthly updates and insights *(Coming Soon)*
 - 🐦 **[David Shapiro on X](https://x.com/DaveShapi)** - Project vision and insights
 - 🚀 **[Nathan Shearer on X](https://x.com/LifeOnAutoSite)** - Technical updates and development
 
