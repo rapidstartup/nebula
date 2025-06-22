@@ -53,7 +53,7 @@ export const QRCodeModal: React.FC<QRCodeModalProps> = ({ isOpen, onClose }) => 
         {/* QR Code */}
         <div className="bg-white p-4 sm:p-6 rounded-xl mb-6 mx-auto max-w-xs">
           <img 
-            src="/2025-06-22 16_13_18-Rork — vibe code a mobile app in minutes.png" 
+            src="/nebula-qr-code.png" 
             alt="QR Code for Nebula Mobile App"
             className="w-full h-auto rounded"
             onError={(e) => {
