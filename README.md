@@ -83,14 +83,14 @@ Lucide React for beautiful icons
 ## 📖 **Documentation**
 
 ### **Core Documents**
-- 📋 **[Project Charter](https://nebula-demo.netlify.app/project-charter)** - Mission, vision, and objectives
-- 🔬 **[Proof of Personhood Whitepaper](https://nebula-demo.netlify.app/proof-of-personhood)** - Technical approach to Sybil resistance
-- 🧭 **[Philosophy & Principles](https://nebula-demo.netlify.app/philosophy)** - Ethical framework and decision-making guidelines
+- 📋 **[Project Charter](https://nebula.rapidstartup.io/project-charter)** - Mission, vision, and objectives
+- 🔬 **[Proof of Personhood Whitepaper](https://nebula.rapidstartup.io/proof-of-personhood)** - Technical approach to Sybil resistance
+- 🧭 **[Philosophy & Principles](https://nebula.rapidstartup.io/philosophy)** - Ethical framework and decision-making guidelines
 
 ### **Legal & Governance**
-- ⚖️ **[Terms of Service](https://nebula-demo.netlify.app/terms-of-service)** - User rights and platform governance
-- 🛡️ **[Privacy Policy](https://nebula-demo.netlify.app/privacy-policy)** - Data protection and user sovereignty
-- 🤝 **[Code of Conduct](https://nebula-demo.netlify.app/code-of-conduct)** - Community standards and moderation
+- ⚖️ **[Terms of Service](https://nebula.rapidstartup.io/terms-of-service)** - User rights and platform governance
+- 🛡️ **[Privacy Policy](https://nebula.rapidstartup.io/privacy-policy)** - Data protection and user sovereignty
+- 🤝 **[Code of Conduct](https://nebula.rapidstartup.io/code-of-conduct)** - Community standards and moderation
 
 ### **Product Requirements**
 - 📊 **[Version 1.0 PRD](./Version1-prd.md)** - Initial product specification
@@ -101,12 +101,14 @@ Lucide React for beautiful icons
 ## 🎯 **Get Started**
 
 ### **🌐 Experience the Vision**
-👉 **[Visit the Live Demo](https://nebula-demo.netlify.app)**
+👉 **[Visit the Official Website](https://nebula.rapidstartup.io)**
 
 Explore our cosmic-themed interface and discover how democratic governance can be beautiful, intuitive, and powerful.
 
 ### **📱 Try the Mobile DAO App**
-On the website, click "Launch App" to get a QR code that opens our mobile demonstration. Experience decentralized governance on your mobile device!
+👉 **[Demo Mobile App](https://nebula-decentralized-community-governance-app.rork.app)**
+
+Experience decentralized governance directly on your mobile device! You can also access this through the QR code on our website by clicking "Launch App".
 
 ---
 
@@ -141,7 +143,7 @@ src/
 
 ### **Contributing**
 We welcome contributions! Please read our:
-- 🤝 **[Code of Conduct](https://nebula-demo.netlify.app/code-of-conduct)**
+- 🤝 **[Code of Conduct](https://nebula.rapidstartup.io/code-of-conduct)**
 - 📋 **[Contributing Guidelines](#)** *(Coming Soon)*
 - 🐛 **[Issue Templates](#)** *(Coming Soon)*
 
@@ -186,10 +188,12 @@ Our design philosophy draws inspiration from the vastness and beauty of space:
 ## 🤝 **Community & Support**
 
 ### **Join the Cosmic Democracy Movement**
-- 🌍 **[Official Website](https://nebula-demo.netlify.app)** - Learn about our vision
+- 🌍 **[Official Website](https://nebula.rapidstartup.io)** - Learn about our vision
+- 📱 **[Demo Mobile App](https://nebula-decentralized-community-governance-app.rork.app)** - Experience governance on mobile
 - 💬 **[Discord Community](#)** - Daily discussions and support
 - 📧 **[Newsletter](#)** - Monthly updates and insights
-- 🐦 **[Twitter](#)** - Real-time news and announcements
+- 🐦 **[David Shapiro on X](https://x.com/DaveShapi)** - Project vision and insights
+- 🚀 **[Nathan Shearer on X](https://x.com/LifeOnAutoSite)** - Technical updates and development
 
 ### **For Researchers & Academics**
 - 📊 **Research Partnerships** - Collaborate on democratic innovation studies
@@ -250,6 +254,8 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 **Why MIT?** We believe in maximum freedom for democratic tools. Fork us, improve us, adapt us for your community's needs.
 
+**Note on Branding:** While the core technology is open source, the Nebula name, logo, and visual branding are protected. Please see our trademark guidelines for proper usage.
+
 ---
 
 ## ⭐ **Star the Project**
@@ -262,7 +268,7 @@ If you believe in democratizing power through technology, **please star this rep
 
 ### 🌌 **"The future is not just digital—it's cosmic."**
 
-**[Explore Nebula →](https://nebula-demo.netlify.app)**
+**[Explore Nebula →](https://nebula.rapidstartup.io)**
 
 ---
 
