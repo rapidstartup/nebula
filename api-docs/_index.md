@@ -1,5 +1,7 @@
 # Nebula API Documentation
 
+v.1.0
+
 Welcome to the Nebula API documentation. This API allows developers to interact with the Nebula platform, enabling integration with various applications and services.
 
 ## Overview

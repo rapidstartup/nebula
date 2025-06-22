@@ -3,7 +3,13 @@ import { MapPin, Target, Calendar } from 'lucide-react';
 
 export const PilotProgram: React.FC = () => {
   return (
-    <section id="pilot-program" className="py-24 px-6 relative">
+    <section 
+      id="pilot-program" 
+      className="py-24 px-6 relative"
+      style={{
+        background: 'linear-gradient(to bottom, #07030C 0%, transparent 100%)'
+      }}
+    >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
