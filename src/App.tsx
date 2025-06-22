@@ -16,6 +16,11 @@ import { Philosophy } from './pages/Philosophy';
 import { TermsOfService } from './pages/TermsOfService';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import { CodeOfConduct } from './pages/CodeOfConduct';
+import { Tutorials } from './pages/Tutorials';
+import { Support } from './pages/Support';
+import { Community } from './pages/Community';
+import { Contributing } from './pages/Contributing';
+import { IssueTemplates } from './pages/IssueTemplates';
 import './App.css';
 
 function HomePage() {
@@ -48,6 +53,11 @@ function App() {
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/code-of-conduct" element={<CodeOfConduct />} />
+        <Route path="/tutorials" element={<Tutorials />} />
+        <Route path="/support" element={<Support />} />
+        <Route path="/community" element={<Community />} />
+        <Route path="/contributing" element={<Contributing />} />
+        <Route path="/issue-templates" element={<IssueTemplates />} />
       </Routes>
     </Router>
   );
