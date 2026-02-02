@@ -23,3 +23,13 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+# Hardhat
+cache/
+artifacts/
+
+# OpenClaw Agent
+# Keep workspace files tracked (defines agent behavior)
+# Ignore personal memory and generated files
+.openclaw/workspace/memory/
+.openclaw/workspace/MEMORY.md
