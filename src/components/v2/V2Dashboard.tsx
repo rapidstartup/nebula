@@ -95,6 +95,32 @@ export function V2Dashboard() {
           {/* Connect Wallet Section */}
           {!isConnected && (
             <div className="mb-8">
+              {/* Onboarding Steps Indicator */}
+              <div className="mb-8">
+                <div className="flex items-center justify-center space-x-4 md:space-x-8">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-8 h-8 rounded-full bg-purple-500 flex items-center justify-center text-white font-bold text-sm">
+                      1
+                    </div>
+                    <span className="text-white font-medium hidden sm:inline">Connect Wallet</span>
+                  </div>
+                  <div className="w-8 md:w-16 h-0.5 bg-gray-600"></div>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-8 h-8 rounded-full bg-gray-600 flex items-center justify-center text-gray-400 font-bold text-sm">
+                      2
+                    </div>
+                    <span className="text-gray-400 font-medium hidden sm:inline">Create Identity</span>
+                  </div>
+                  <div className="w-8 md:w-16 h-0.5 bg-gray-600"></div>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-8 h-8 rounded-full bg-gray-600 flex items-center justify-center text-gray-400 font-bold text-sm">
+                      3
+                    </div>
+                    <span className="text-gray-400 font-medium hidden sm:inline">Start Exploring</span>
+                  </div>
+                </div>
+              </div>
+
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div>
                   <h2 className="text-4xl font-bold text-white mb-4">
@@ -104,7 +130,7 @@ export function V2Dashboard() {
                     Join the decentralized governance revolution. Create your identity, 
                     form DAOs, and participate in transparent democratic processes.
                   </p>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm mb-6">
                     <div className="flex items-center space-x-2">
                       <Shield className="w-5 h-5 text-purple-400" />
                       <span>Self-Sovereign Identity</span>
@@ -122,6 +148,9 @@ export function V2Dashboard() {
                       <span>Community Treasury</span>
                     </div>
                   </div>
+                  <p className="text-sm text-gray-400">
+                    Connect your wallet to get started. We support MetaMask, WalletConnect, and other popular wallets.
+                  </p>
                 </div>
                 <ConnectWallet />
               </div>

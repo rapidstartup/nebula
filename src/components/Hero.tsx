@@ -1,28 +1,14 @@
 import React, { useState } from 'react';
-import { Rocket, Download, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Rocket, ArrowRight, Smartphone } from 'lucide-react';
 import { QRCodeModal } from './QRCodeModal';
 
 export const Hero: React.FC = () => {
   const [isQRModalOpen, setIsQRModalOpen] = useState(false);
 
-  const handleLaunchApp = (e: React.MouseEvent) => {
+  const handleMobileAppClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    console.log('Launch App clicked!'); // Debug log
     setIsQRModalOpen(true);
-  };
-
-  const handleExploreResources = (e: React.MouseEvent) => {
-    e.preventDefault();
-    console.log('Explore Resources clicked!'); // Debug log
-    const resourcesSection = document.getElementById('resources');
-    if (resourcesSection) {
-      resourcesSection.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
-    } else {
-      console.log('Resources section not found');
-    }
   };
 
   return (
@@ -64,20 +50,22 @@ export const Hero: React.FC = () => {
           
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 px-4">
-            <button 
-              onClick={handleLaunchApp}
+            {/* Primary CTA - Web App Dashboard */}
+            <Link 
+              to="/v2"
               className="w-full sm:w-auto group nebula-gradient px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-white hover-lift flex items-center justify-center gap-3 text-base sm:text-lg transition-all duration-300 hover:scale-105 min-w-[200px]"
             >
-              <Download className="w-5 h-5 group-hover:animate-bounce" />
-              Launch App
+              Get Started
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
+            </Link>
             
+            {/* Secondary CTA - Mobile App Download */}
             <button 
-              onClick={handleExploreResources}
-              className="w-full sm:w-auto glass-effect px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-white hover-lift border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300 hover:scale-105 min-w-[200px]"
+              onClick={handleMobileAppClick}
+              className="w-full sm:w-auto glass-effect px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-white hover-lift border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300 hover:scale-105 min-w-[200px] flex items-center justify-center gap-2"
             >
-              Explore Resources
+              <Smartphone className="w-5 h-5" />
+              Mobile App
             </button>
           </div>
         </div>

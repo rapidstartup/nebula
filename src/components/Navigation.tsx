@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Rocket, Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Rocket, Menu, X, ArrowRight } from 'lucide-react';
 
 export const Navigation: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -130,6 +131,15 @@ export const Navigation: React.FC = () => {
                   </div>
                 </div>
               </div>
+
+              {/* Get Started CTA Button */}
+              <Link 
+                to="/v2" 
+                className="ml-4 nebula-gradient px-6 py-2.5 rounded-full font-semibold text-white hover:scale-105 transition-transform flex items-center gap-2 text-sm"
+              >
+                Get Started
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
 
             {/* Mobile Menu Button - Show on tablet and mobile */}
@@ -157,6 +167,16 @@ export const Navigation: React.FC = () => {
           
           <div className="absolute top-0 right-0 w-full max-w-sm h-full bg-black/95 backdrop-blur-lg border-l border-purple-500/20 transform transition-transform duration-300">
             <div className="pt-20 p-6">
+              {/* Mobile Get Started CTA */}
+              <Link 
+                to="/v2" 
+                onClick={() => setIsMenuOpen(false)}
+                className="w-full nebula-gradient px-6 py-3 rounded-full font-semibold text-white flex items-center justify-center gap-2 mb-6 hover:scale-105 transition-transform"
+              >
+                Get Started
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+
               <div className="space-y-1">
                 {navItems.map((item) => (
                   <button

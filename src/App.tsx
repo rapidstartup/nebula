@@ -1,5 +1,4 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { WagmiProvider } from 'wagmi';
 import { Navigation } from './components/Navigation';
@@ -76,6 +75,15 @@ function App() {
             <Route path="/contributing" element={<Contributing />} />
             <Route path="/issue-templates" element={<IssueTemplates />} />
             <Route path="/v2" element={<V2Dashboard />} />
+            
+            {/* Redirect routes */}
+            <Route path="/login" element={<Navigate to="/v2" replace />} />
+            <Route path="/signup" element={<Navigate to="/v2" replace />} />
+            <Route path="/connect" element={<Navigate to="/v2" replace />} />
+            <Route path="/dashboard" element={<Navigate to="/v2" replace />} />
+            
+            {/* Catch-all route - redirect unknown paths to home */}
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Router>
       </QueryClientProvider>
