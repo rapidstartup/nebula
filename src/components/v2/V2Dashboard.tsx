@@ -20,7 +20,6 @@ import { CosmicBackground } from '../CosmicBackground';
 import { Navigation } from '../Navigation';
 import { Footer } from '../Footer';
 import { 
-  Zap, 
   Shield, 
   Building, 
   Users, 
@@ -45,41 +44,9 @@ export function V2Dashboard() {
       <div className="relative z-10">
         <Navigation />
         
-        {/* Header */}
-        <header className="bg-slate-800/50 backdrop-blur-sm border-b border-purple-500/20">
-          <div className="max-w-7xl mx-auto px-4 py-6">
-            <div className="flex items-center justify-between">
-              <div>
-                <h1 className="text-3xl font-bold text-white flex items-center space-x-3">
-                  <Zap className="w-8 h-8 text-purple-400" />
-                  <span>Nebula V2</span>
-                  <span className="bg-purple-500/20 text-purple-400 text-sm px-3 py-1 rounded-full font-normal">
-                    Decentralized Democracy
-                  </span>
-                </h1>
-                <p className="text-gray-300 mt-2">
-                  Self-sovereign identity, autonomous governance, and transparent democracy
-                </p>
-              </div>
-              
-              <div className="flex items-center space-x-4">
-                {/* Network Status */}
-                <div className={`flex items-center space-x-2 px-3 py-1 rounded-lg ${
-                  isSupported ? 'bg-green-500/20 text-green-400' : 'bg-red-500/20 text-red-400'
-                }`}>
-                  <Network className="w-4 h-4" />
-                  <span className="text-sm">
-                    {isLocalNetwork ? 'Local' : isSepolia ? 'Sepolia' : 'Unsupported Network'}
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </header>
-
         {/* Network Warning */}
         {!isSupported && isConnected && (
-          <div className="bg-red-500/10 border-b border-red-500/20">
+          <div className="bg-red-500/10 border-b border-red-500/20 pt-16 sm:pt-20">
             <div className="max-w-7xl mx-auto px-4 py-3">
               <div className="flex items-center space-x-2">
                 <AlertTriangle className="w-5 h-5 text-red-400" />
@@ -91,7 +58,7 @@ export function V2Dashboard() {
           </div>
         )}
 
-        <main className="max-w-7xl mx-auto px-4 py-8">
+        <main className="max-w-7xl mx-auto px-4 py-8 pt-20 sm:pt-24">
           {/* Connect Wallet Section */}
           {!isConnected && (
             <div className="mb-8">
