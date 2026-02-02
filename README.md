@@ -103,7 +103,15 @@ Lucide React for beautiful icons
 
 ---
 
-## 🎯 **Get Started**
+## 🎯 **Quick Start**
+
+### Live Demo
+🚀 **Try Nebula now**: https://nebula.rapidstartup.io
+
+### **📖 Documentation**
+- 👤 **[User Guide](./docs/USER_GUIDE.md)** - How to use Nebula (connect wallet, create identity, join DAO, vote)
+- 💻 **[Developer Guide](./docs/DEVELOPER_GUIDE.md)** - Smart contract addresses, ABIs, integration examples
+- 📚 **[API Docs](https://rapidstartup.gitbook.io/nebula/)** - Complete API reference
 
 ### **🌐 Experience the Vision**
 👉 **[Visit the Official Website](https://nebula.rapidstartup.io)**
