@@ -1,6 +1,41 @@
-# TOOLS.md - Nebula Project Tools & Configuration
+# TOOLS.MD - Nebula Project Tools & Configuration
 
-Complete tooling reference for all aspects of the Nebula project.
+## ⚠️ CRITICAL PATH INFORMATION - READ FIRST ⚠️
+
+**YOUR WORKSPACE FOLDER:** `c:\Users\natha\Downloads\repositories\nebula\.openclaw\workspace`
+**THE PROJECT ROOT (where code lives):** `c:\Users\natha\Downloads\repositories\nebula`
+
+**IMPORTANT:** Your workspace folder is INSIDE the project. When accessing project files, use ABSOLUTE paths or navigate UP:
+- `.env.local` is at: `c:\Users\natha\Downloads\repositories\nebula\.env.local` (NOT in workspace!)
+- `hardhat.config.cjs` is at: `c:\Users\natha\Downloads\repositories\nebula\hardhat.config.cjs`
+- `scripts/deploy.cjs` is at: `c:\Users\natha\Downloads\repositories\nebula\scripts\deploy.cjs`
+- `contracts/` is at: `c:\Users\natha\Downloads\repositories\nebula\contracts\`
+
+**When running commands, ALWAYS cd to project root first:**
+```powershell
+cd c:\Users\natha\Downloads\repositories\nebula; npx hardhat compile
+```
+
+---
+
+## 🔗 DEPLOYED SMART CONTRACTS
+
+### Sepolia Testnet (Ethereum) ✅ LIVE
+| Contract | Address |
+|----------|---------|
+| IdentityRegistry | `0xa6A4680b23A04Feb830733c734b64478075eDCaF` |
+| ActionToken | `0xd30f9Bd8CE0797Ed03e8b0D25e3B8e1bda31434e` |
+| DAO | `0xb9a1aa37838f08b6C6960516A29aBbF72B5aa79F` |
+| Voting | `0x9fBC0D018b6dc06268a7B97a4FFd535b35cfcA71` |
+| Agents | `0xbc7Eb686720a7E6a4A524165b7a0495072c2FDc0` |
+
+### Polygon Amoy Testnet ⏳ PENDING
+Waiting for deployment - user funding wallet with MATIC.
+
+### Config Files (already updated for Sepolia)
+- `src/lib/web3/config.ts` - Chain-specific addresses
+- `src/lib/web3/contract-config.ts` - Default addresses
+- `src/lib/abi/addresses.json` - JSON deployment record
 
 ---
 

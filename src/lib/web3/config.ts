@@ -29,13 +29,13 @@ export const LOCAL_CONTRACTS: ContractAddresses = {
   NebulaAgentRegistry: '0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9',
 };
 
-// Sepolia Testnet (to be filled after deployment)
+// Sepolia Testnet - Deployed 2026-02-02
 export const SEPOLIA_CONTRACTS: ContractAddresses = {
-  NebulaIdentity: '0x0000000000000000000000000000000000000000',
-  NebulaDAO: '0x0000000000000000000000000000000000000000',
-  NebulaGovernance: '0x0000000000000000000000000000000000000000',
-  NebulaTreasury: '0x0000000000000000000000000000000000000000',
-  NebulaAgentRegistry: '0x0000000000000000000000000000000000000000',
+  NebulaIdentity: '0xa6A4680b23A04Feb830733c734b64478075eDCaF',      // IdentityRegistry
+  NebulaDAO: '0xb9a1aa37838f08b6C6960516A29aBbF72B5aa79F',           // DAO
+  NebulaGovernance: '0x9fBC0D018b6dc06268a7B97a4FFd535b35cfcA71',    // Voting
+  NebulaTreasury: '0xd30f9Bd8CE0797Ed03e8b0D25e3B8e1bda31434e',      // ActionToken
+  NebulaAgentRegistry: '0xbc7Eb686720a7E6a4A524165b7a0495072c2FDc0', // Agents
 };
 
 // Polygon Amoy Testnet (to be filled after deployment)

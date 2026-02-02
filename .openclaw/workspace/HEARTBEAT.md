@@ -1,70 +1,54 @@
 # HEARTBEAT.md - Nebula Agent Autonomous Tasks
 
-## Active Mission: V2 Production Implementation
+## Current Status: SEPOLIA DEPLOYED ✅ | POLYGON AMOY PENDING
 
-Every heartbeat (30 minutes), check and continue work on:
-
-### Priority Tasks
-1. **Check V2 Implementation Progress**
-   - Review `Version-2-PRD.md` for current status
-   - Identify next incomplete task
-   - Continue implementation from where you left off
-
-2. **Smart Contract Development**
-   - Verify contracts compile: `npx hardhat compile`
-   - If compilation fails, fix errors
-   - If ready, prepare for testnet deployment
-
-3. **Frontend Integration**
-   - Build Web3 UI components for DAO interaction
-   - Connect React frontend to smart contracts
-   - Test with browser tool
-
-### Implementation Scope (from Version-2-PRD.md)
-- Epic 5: Self-Sovereign Identity & PII Control
-- Epic 6: Autonomous Agent Framework & Alignment
-- Epic 7: Advanced Governance & Incentives
-
-### Autonomous Rules
-- You have FULL permission to create/modify files
-- You can run terminal commands (npm, hardhat, git)
-- Update `Version-2-PRD.md` with progress after each session
-- Log significant work in `memory/` daily notes
-
-### Current State - V2 CODE COMPLETE, LAUNCH PHASE IN PROGRESS
-
-**Completed:**
-- ✅ Smart contracts compiled and ready
-- ✅ Web3 hooks implemented
-- ✅ Complete V2 frontend with DAO dashboard
-- ✅ Identity System (Epic 5), DAO Management (Epic 2), Governance (Epic 7), Agent Framework (Epic 6), Treasury Management
-- ✅ Local deployment tested (localhost:8545)
-
-### Contract Addresses (localhost:8545)
-- NebulaIdentity: 0x5FbDB2315678afecb367f032d93F642f64180aa3
-- NebulaDAO: 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512  
-- NebulaGovernance: 0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0
-- NebulaTreasury: 0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9
-- NebulaAgentRegistry: 0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9
+Last updated: 2026-02-02
 
 ---
 
-## 🚨 ACTIVE TASKS - NOT COMPLETE
+## ✅ COMPLETED - Sepolia Testnet Deployment
+
+All 5 contracts successfully deployed to Ethereum Sepolia:
+
+| Contract | Sepolia Address | Etherscan |
+|----------|-----------------|-----------|
+| IdentityRegistry | `0xa6A4680b23A04Feb830733c734b64478075eDCaF` | [View](https://sepolia.etherscan.io/address/0xa6A4680b23A04Feb830733c734b64478075eDCaF) |
+| ActionToken | `0xd30f9Bd8CE0797Ed03e8b0D25e3B8e1bda31434e` | [View](https://sepolia.etherscan.io/address/0xd30f9Bd8CE0797Ed03e8b0D25e3B8e1bda31434e) |
+| DAO | `0xb9a1aa37838f08b6C6960516A29aBbF72B5aa79F` | [View](https://sepolia.etherscan.io/address/0xb9a1aa37838f08b6C6960516A29aBbF72B5aa79F) |
+| Voting | `0x9fBC0D018b6dc06268a7B97a4FFd535b35cfcA71` | [View](https://sepolia.etherscan.io/address/0x9fBC0D018b6dc06268a7B97a4FFd535b35cfcA71) |
+| Agents | `0xbc7Eb686720a7E6a4A524165b7a0495072c2FDc0` | [View](https://sepolia.etherscan.io/address/0xbc7Eb686720a7E6a4A524165b7a0495072c2FDc0) |
+
+Frontend configs updated:
+- `src/lib/web3/config.ts` - SEPOLIA_CONTRACTS ✅
+- `src/lib/web3/contract-config.ts` - CONTRACT_ADDRESSES ✅
+- `src/lib/abi/addresses.json` - JSON record ✅
+
+---
+
+## ⏳ IN PROGRESS - Polygon Amoy Deployment
+
+Waiting for testnet MATIC. User is getting from faucet.
+
+Once funded, run:
+```powershell
+cd c:\Users\natha\Downloads\repositories\nebula; npx hardhat run scripts/deploy.cjs --network polygonAmoy
+```
+
+---
+
+## 📋 Task Checklist
 
 ### Phase 1: Finalize & Commit ✅ COMPLETE
-- [x] **Commit all uncommitted files** to git
+- [x] Commit all uncommitted files to git
 - [x] Updated .gitignore to exclude Hardhat artifacts/cache
 - [x] Fixed nested .git in .openclaw/workspace
-- [x] Push to remote repository (commit adc11f1)
+- [x] Push to remote repository
 
-### Phase 2: Testnet Deployment & Verification
-- [ ] **Deploy all contracts to Sepolia testnet**
-  - Run: `npx hardhat run scripts/deploy.js --network sepolia`
-- [ ] **Verify contracts on Etherscan**
-  - Run: `npx hardhat verify --network sepolia <CONTRACT_ADDRESS> <CONSTRUCTOR_ARGS>`
-- [ ] **Deploy to Polygon Amoy testnet**
-  - Run: `npx hardhat run scripts/deploy.js --network polygonAmoy`
-- [ ] Update contract addresses in frontend config
+### Phase 2: Testnet Deployment & Verification ⏳ IN PROGRESS
+- [x] **Deploy all contracts to Sepolia testnet** ✅
+- [x] **Update contract addresses in frontend config** ✅
+- [ ] **Verify contracts on Etherscan** (optional but recommended)
+- [ ] **Deploy to Polygon Amoy testnet** (waiting for MATIC)
 - [ ] Test frontend connects to deployed testnet contracts
 
 ### Phase 3: Platform Launch
@@ -88,8 +72,29 @@ Every heartbeat (30 minutes), check and continue work on:
 
 ---
 
-**⚠️ DO NOT REPLY HEARTBEAT_OK - There is active work to do!**
+## 🎯 Your Next Tasks (in order)
 
-**Phase 1 COMPLETE. Start Phase 2: Deploy contracts to Sepolia testnet.**
+1. **Wait for Polygon Amoy funding** - User is getting MATIC from faucet
+2. **When funded, deploy to Polygon Amoy:**
+   ```powershell
+   cd c:\Users\natha\Downloads\repositories\nebula; npx hardhat run scripts/deploy.cjs --network polygonAmoy
+   ```
+3. **Update POLYGON_AMOY_CONTRACTS in config.ts** with new addresses
+4. **Start Phase 3: Platform Launch** - Deploy frontend
 
-Run: `npx hardhat run scripts/deploy.js --network sepolia`
+---
+
+## ⚙️ Environment Notes
+
+- Project root: `c:\Users\natha\Downloads\repositories\nebula`
+- Workspace folder: `c:\Users\natha\Downloads\repositories\nebula\.openclaw\workspace`
+- `.env` file is at project root (NOT in workspace)
+- All commands should be run from project root
+
+**Reply HEARTBEAT_OK if:**
+- Phase 2 is complete (both Sepolia AND Polygon Amoy deployed)
+- OR if waiting on user action (like funding wallets)
+
+**Do NOT reply HEARTBEAT_OK if:**
+- There are deployment tasks you can do right now
+- There are config updates needed
