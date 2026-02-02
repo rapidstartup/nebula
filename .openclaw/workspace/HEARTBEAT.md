@@ -51,10 +51,11 @@ Every heartbeat (30 minutes), check and continue work on:
 
 ## 🚨 ACTIVE TASKS - NOT COMPLETE
 
-### Phase 1: Finalize & Commit (BLOCKING)
-- [ ] **Commit all uncommitted files** to git (artifacts/, contracts/, docs, etc.)
-- [ ] Clean up any temp files that shouldn't be committed
-- [ ] Push to remote repository
+### Phase 1: Finalize & Commit ✅ COMPLETE
+- [x] **Commit all uncommitted files** to git
+- [x] Updated .gitignore to exclude Hardhat artifacts/cache
+- [x] Fixed nested .git in .openclaw/workspace
+- [x] Push to remote repository (commit adc11f1)
 
 ### Phase 2: Testnet Deployment & Verification
 - [ ] **Deploy all contracts to Sepolia testnet**
@@ -89,4 +90,6 @@ Every heartbeat (30 minutes), check and continue work on:
 
 **⚠️ DO NOT REPLY HEARTBEAT_OK - There is active work to do!**
 
-**Start with Phase 1: Run `git status`, then commit and push all changes.**
+**Phase 1 COMPLETE. Start Phase 2: Deploy contracts to Sepolia testnet.**
+
+Run: `npx hardhat run scripts/deploy.js --network sepolia`
