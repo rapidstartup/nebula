@@ -186,18 +186,30 @@ export function ConnectWallet() {
       )}
 
       <div className="space-y-3">
-        {/* Filter duplicates - if we have both 'injected' and 'metaMask', show only one */}
-        {connectors
-          .filter((connector, index, arr) => {
-            // Skip 'metaMask' if 'injected' already exists (they're the same thing)
-            if (connector.id === 'metaMask' && arr.some(c => c.id === 'injected')) {
+        {/* Deduplicate connectors - keep only unique wallet types */}
+        {(() => {
+          // Get unique connectors - prioritize 'injected' over 'metaMask', keep one of each type
+          const seen = new Set<string>();
+          const uniqueConnectors = connectors.filter((connector) => {
+            // Normalize the key - treat injected/metaMask as same type
+            const isInjectedType = connector.id === 'injected' || 
+                                   connector.id === 'metaMask' || 
+                                   connector.name.toLowerCase().includes('metamask');
+            const key = isInjectedType ? 'browser-wallet' : connector.id;
+            
+            if (seen.has(key)) {
               return false;
             }
-            // Skip duplicate names
-            const firstIndex = arr.findIndex(c => c.name === connector.name);
-            return firstIndex === index;
-          })
-          .map((connector) => {
+            seen.add(key);
+            return true;
+          });
+          
+          console.log('[Nebula] Available connectors:', uniqueConnectors.map(c => ({ id: c.id, name: c.name })));
+          
+          return uniqueConnectors.map((connector) => {
+            const isInjectedType = connector.id === 'injected' || 
+                                   connector.id === 'metaMask' || 
+                                   connector.name.toLowerCase().includes('metamask');
             const config = getWalletConfig(connector.id, connector.name);
             const isLoading = isPending && pendingConnector?.id === connector.id;
             
@@ -214,7 +226,7 @@ export function ConnectWallet() {
                 <div className="flex-1 text-left">
                   <span className="text-white font-medium block">{config.name}</span>
                   <span className="text-xs text-gray-500">
-                    {connector.id === 'injected' || connector.id === 'metaMask' 
+                    {isInjectedType 
                       ? 'Browser extension' 
                       : connector.id === 'walletConnect' 
                         ? 'Scan with mobile wallet'
@@ -228,9 +240,10 @@ export function ConnectWallet() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 )}
-            </button>
-          );
-        })}
+              </button>
+            );
+          });
+        })()}
       </div>
 
       {/* Warning if no WalletConnect */}

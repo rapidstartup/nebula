@@ -55,35 +55,30 @@ export const DEFAULT_CHAIN = sepolia; // Use testnet by default for development
 
 // ============ WAGMI CONFIG ============
 
-const projectId = import.meta.env.VITE_WALLETCONNECT_PROJECT_ID;
+const projectId = import.meta.env.VITE_WALLETCONNECT_PROJECT_ID || '';
 
-// Warn if WalletConnect is not configured
-if (!projectId) {
-  console.warn(
-    '[Nebula] VITE_WALLETCONNECT_PROJECT_ID is not set. WalletConnect will not work. ' +
-    'Get a free project ID at https://cloud.walletconnect.com'
-  );
-}
-
-// Build connectors - only add WalletConnect if project ID is configured
-const connectors = [
-  injected({ 
-    shimDisconnect: true,
-    // Only show if actually installed (prevents duplicate)
-  }),
-];
-
-// Only add WalletConnect if we have a real project ID
-if (projectId && projectId !== 'demo-project-id') {
-  connectors.push(walletConnect({ 
-    projectId,
-    showQrModal: true,
-  }));
-}
+// Log config status for debugging
+console.log('[Nebula] WalletConnect Project ID configured:', !!projectId && projectId.length > 10);
 
 export const wagmiConfig = createConfig({
   chains: SUPPORTED_CHAINS,
-  connectors,
+  connectors: [
+    // Single injected connector for browser wallets (MetaMask, etc.)
+    injected({
+      shimDisconnect: true,
+    }),
+    // WalletConnect - always include, will show error if project ID is invalid
+    walletConnect({
+      projectId: projectId || 'placeholder-will-fail',
+      showQrModal: true,
+      metadata: {
+        name: 'Nebula',
+        description: 'Decentralized Democracy Platform',
+        url: 'https://nebula.rapidstartup.io',
+        icons: ['https://nebula.rapidstartup.io/nebula-icon.png'],
+      },
+    }),
+  ],
   transports: {
     [mainnet.id]: http(),
     [sepolia.id]: http(),
