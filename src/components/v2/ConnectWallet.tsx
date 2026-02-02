@@ -186,41 +186,61 @@ export function ConnectWallet() {
       )}
 
       <div className="space-y-3">
-        {connectors.map((connector) => {
-          const config = getWalletConfig(connector.id, connector.name);
-          const isLoading = isPending && pendingConnector?.id === connector.id;
-          
-          return (
-            <button
-              key={connector.uid}
-              onClick={() => handleConnect(connector)}
-              disabled={isPending}
-              className="w-full flex items-center p-4 rounded-xl border border-gray-600/50 hover:border-purple-500/50 bg-slate-700/30 hover:bg-slate-700/50 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed group"
-            >
-              <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${config.color} flex items-center justify-center mr-4 group-hover:scale-110 transition-transform`}>
-                <span className="text-xl">{config.icon}</span>
-              </div>
-              <div className="flex-1 text-left">
-                <span className="text-white font-medium block">{config.name}</span>
-                <span className="text-xs text-gray-500">
-                  {connector.id === 'injected' || connector.id === 'metaMask' 
-                    ? 'Browser extension' 
-                    : connector.id === 'walletConnect' 
-                      ? 'Scan with mobile wallet'
-                      : 'Connect securely'}
-                </span>
-              </div>
-              {isLoading ? (
-                <div className="w-5 h-5 border-2 border-purple-400 border-t-transparent rounded-full animate-spin"></div>
-              ) : (
-                <svg className="w-5 h-5 text-gray-500 group-hover:text-purple-400 group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              )}
+        {/* Filter duplicates - if we have both 'injected' and 'metaMask', show only one */}
+        {connectors
+          .filter((connector, index, arr) => {
+            // Skip 'metaMask' if 'injected' already exists (they're the same thing)
+            if (connector.id === 'metaMask' && arr.some(c => c.id === 'injected')) {
+              return false;
+            }
+            // Skip duplicate names
+            const firstIndex = arr.findIndex(c => c.name === connector.name);
+            return firstIndex === index;
+          })
+          .map((connector) => {
+            const config = getWalletConfig(connector.id, connector.name);
+            const isLoading = isPending && pendingConnector?.id === connector.id;
+            
+            return (
+              <button
+                key={connector.uid}
+                onClick={() => handleConnect(connector)}
+                disabled={isPending}
+                className="w-full flex items-center p-4 rounded-xl border border-gray-600/50 hover:border-purple-500/50 bg-slate-700/30 hover:bg-slate-700/50 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed group"
+              >
+                <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${config.color} flex items-center justify-center mr-4 group-hover:scale-110 transition-transform`}>
+                  <span className="text-xl">{config.icon}</span>
+                </div>
+                <div className="flex-1 text-left">
+                  <span className="text-white font-medium block">{config.name}</span>
+                  <span className="text-xs text-gray-500">
+                    {connector.id === 'injected' || connector.id === 'metaMask' 
+                      ? 'Browser extension' 
+                      : connector.id === 'walletConnect' 
+                        ? 'Scan with mobile wallet'
+                        : 'Connect securely'}
+                  </span>
+                </div>
+                {isLoading ? (
+                  <div className="w-5 h-5 border-2 border-purple-400 border-t-transparent rounded-full animate-spin"></div>
+                ) : (
+                  <svg className="w-5 h-5 text-gray-500 group-hover:text-purple-400 group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                )}
             </button>
           );
         })}
       </div>
+
+      {/* Warning if no WalletConnect */}
+      {!connectors.some(c => c.id === 'walletConnect') && (
+        <div className="mt-4 p-3 bg-amber-500/10 border border-amber-500/30 rounded-lg">
+          <p className="text-amber-400 text-xs text-center">
+            Mobile wallet connection unavailable. Install MetaMask browser extension to connect.
+          </p>
+        </div>
+      )}
 
       <div className="mt-6 pt-4 border-t border-gray-700/50">
         <p className="text-xs text-gray-500 text-center">

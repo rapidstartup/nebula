@@ -55,14 +55,35 @@ export const DEFAULT_CHAIN = sepolia; // Use testnet by default for development
 
 // ============ WAGMI CONFIG ============
 
-const projectId = import.meta.env.VITE_WALLETCONNECT_PROJECT_ID || 'demo-project-id';
+const projectId = import.meta.env.VITE_WALLETCONNECT_PROJECT_ID;
+
+// Warn if WalletConnect is not configured
+if (!projectId) {
+  console.warn(
+    '[Nebula] VITE_WALLETCONNECT_PROJECT_ID is not set. WalletConnect will not work. ' +
+    'Get a free project ID at https://cloud.walletconnect.com'
+  );
+}
+
+// Build connectors - only add WalletConnect if project ID is configured
+const connectors = [
+  injected({ 
+    shimDisconnect: true,
+    // Only show if actually installed (prevents duplicate)
+  }),
+];
+
+// Only add WalletConnect if we have a real project ID
+if (projectId && projectId !== 'demo-project-id') {
+  connectors.push(walletConnect({ 
+    projectId,
+    showQrModal: true,
+  }));
+}
 
 export const wagmiConfig = createConfig({
   chains: SUPPORTED_CHAINS,
-  connectors: [
-    injected(),
-    walletConnect({ projectId }),
-  ],
+  connectors,
   transports: {
     [mainnet.id]: http(),
     [sepolia.id]: http(),
