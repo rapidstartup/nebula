@@ -64,9 +64,42 @@ const getWalletConfig = (connectorId: string, connectorName: string) => {
 
 export function ConnectWallet() {
   const { address, isConnected, chain } = useAccount();
-  const { connectors, connect, isPending, pendingConnector } = useConnect();
+  const { connectors, connect, isPending, pendingConnector, error } = useConnect();
   const { disconnect } = useDisconnect();
   const [copied, setCopied] = React.useState(false);
+  const [connectionError, setConnectionError] = React.useState<string | null>(null);
+
+  // Handle connection with error catching
+  const handleConnect = async (connector: typeof connectors[0]) => {
+    setConnectionError(null);
+    try {
+      // Check if MetaMask/injected wallet is available
+      if ((connector.id === 'injected' || connector.id === 'metaMask') && 
+          typeof window !== 'undefined' && 
+          !(window as any).ethereum) {
+        setConnectionError('MetaMask not detected. Please install the MetaMask browser extension.');
+        window.open('https://metamask.io/download/', '_blank');
+        return;
+      }
+      connect({ connector });
+    } catch (err: any) {
+      setConnectionError(err.message || 'Failed to connect wallet');
+    }
+  };
+
+  // Clear error when connection succeeds
+  React.useEffect(() => {
+    if (isConnected) {
+      setConnectionError(null);
+    }
+  }, [isConnected]);
+
+  // Show wagmi errors
+  React.useEffect(() => {
+    if (error) {
+      setConnectionError(error.message);
+    }
+  }, [error]);
 
   const copyAddress = async () => {
     if (address) {
@@ -145,6 +178,13 @@ export function ConnectWallet() {
         </p>
       </div>
 
+      {/* Error message */}
+      {connectionError && (
+        <div className="mb-4 p-3 bg-red-500/10 border border-red-500/30 rounded-lg">
+          <p className="text-red-400 text-sm">{connectionError}</p>
+        </div>
+      )}
+
       <div className="space-y-3">
         {connectors.map((connector) => {
           const config = getWalletConfig(connector.id, connector.name);
@@ -153,7 +193,7 @@ export function ConnectWallet() {
           return (
             <button
               key={connector.uid}
-              onClick={() => connect({ connector })}
+              onClick={() => handleConnect(connector)}
               disabled={isPending}
               className="w-full flex items-center p-4 rounded-xl border border-gray-600/50 hover:border-purple-500/50 bg-slate-700/30 hover:bg-slate-700/50 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed group"
             >

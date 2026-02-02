@@ -16,6 +16,7 @@ import { DAODashboard } from './DAODashboard';
 import { GovernanceDashboard } from './GovernanceDashboard';
 import { AgentFramework } from './AgentFramework';
 import { TreasuryDashboard } from './TreasuryDashboard';
+import { VerifiedContracts } from './VerifiedContracts';
 import { CosmicBackground } from '../CosmicBackground';
 import { Navigation } from '../Navigation';
 import { Footer } from '../Footer';
@@ -120,6 +121,11 @@ export function V2Dashboard() {
                   </p>
                 </div>
                 <ConnectWallet />
+              </div>
+              
+              {/* Verified Contracts - Build trust before connecting */}
+              <div className="mt-8">
+                <VerifiedContracts />
               </div>
             </div>
           )}
