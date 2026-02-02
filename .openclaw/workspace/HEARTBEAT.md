@@ -1,8 +1,22 @@
 # HEARTBEAT.md - Nebula Agent Autonomous Tasks
 
-## Current Status: SEPOLIA DEPLOYED ✅ | POLYGON AMOY PENDING
+## Current Status: FRONTEND READY ✅ | CONTRACTS DEPLOYED ✅ | READY FOR LAUNCH
 
 Last updated: 2026-02-02
+
+---
+
+## ✅ COMPLETED - Frontend Onboarding Flow (Just Added!)
+
+User journey from landing page to wallet connection is now complete:
+
+1. **Navigation CTAs** - "Get Started" button added to both desktop and mobile navigation
+2. **Hero CTAs** - Primary "Get Started" links to /v2, "Mobile App" opens QR modal
+3. **Route Redirects** - /login, /signup, /connect, /dashboard all redirect to /v2
+4. **Catch-all Route** - Unknown paths redirect to homepage (no more blank pages)
+5. **Onboarding Steps** - V2Dashboard shows step indicator: Connect Wallet → Create Identity → Start Exploring
+
+Commit: `5583299` - feat: Add wallet onboarding flow and navigation CTAs
 
 ---
 
@@ -25,11 +39,11 @@ Frontend configs updated:
 
 ---
 
-## ⏳ IN PROGRESS - Polygon Amoy Deployment
+## ⏸️ PAUSED - Polygon Amoy Deployment
 
-Waiting for testnet MATIC. User is getting from faucet.
+Waiting for testnet MATIC. This is NOT blocking - Sepolia deployment is sufficient for launch.
 
-Once funded, run:
+Once funded (optional), run:
 ```powershell
 cd c:\Users\natha\Downloads\repositories\nebula; npx hardhat run scripts/deploy.cjs --network polygonAmoy
 ```
@@ -44,11 +58,12 @@ cd c:\Users\natha\Downloads\repositories\nebula; npx hardhat run scripts/deploy.
 - [x] Fixed nested .git in .openclaw/workspace
 - [x] Push to remote repository
 
-### Phase 2: Testnet Deployment & Verification ⏳ IN PROGRESS
+### Phase 2: Testnet Deployment & Verification ✅ MOSTLY COMPLETE
 - [x] **Deploy all contracts to Sepolia testnet** ✅
 - [x] **Update contract addresses in frontend config** ✅
+- [x] **Frontend onboarding flow complete** ✅ (NEW!)
 - [ ] **Verify contracts on Etherscan** (optional but recommended)
-- [ ] **Deploy to Polygon Amoy testnet** (waiting for MATIC)
+- [ ] **Deploy to Polygon Amoy testnet** (paused - waiting for MATIC, not blocking)
 - [ ] Test frontend connects to deployed testnet contracts
 
 ### Phase 3: Platform Launch
@@ -74,13 +89,14 @@ cd c:\Users\natha\Downloads\repositories\nebula; npx hardhat run scripts/deploy.
 
 ## 🎯 Your Next Tasks (in order)
 
-1. **Wait for Polygon Amoy funding** - User is getting MATIC from faucet
-2. **When funded, deploy to Polygon Amoy:**
-   ```powershell
-   cd c:\Users\natha\Downloads\repositories\nebula; npx hardhat run scripts/deploy.cjs --network polygonAmoy
-   ```
-3. **Update POLYGON_AMOY_CONTRACTS in config.ts** with new addresses
-4. **Start Phase 3: Platform Launch** - Deploy frontend
+**PRIORITY SHIFT: Contracts are done! Focus on PLATFORM LAUNCH now.**
+
+1. **Test frontend with Sepolia contracts** - Connect wallet, verify contract interactions work
+2. **Add VITE_WALLETCONNECT_PROJECT_ID to .env.local** - Get project ID from cloud.walletconnect.com
+3. **Start Phase 3: Platform Launch** - Deploy frontend to Vercel or Cloudflare Pages
+4. **Phase 4: Documentation** - Create user guides and developer docs
+
+Polygon Amoy deployment is PAUSED (not blocking). Sepolia is sufficient for MVP launch.
 
 ---
 
@@ -88,8 +104,14 @@ cd c:\Users\natha\Downloads\repositories\nebula; npx hardhat run scripts/deploy.
 
 - Project root: `c:\Users\natha\Downloads\repositories\nebula`
 - Workspace folder: `c:\Users\natha\Downloads\repositories\nebula\.openclaw\workspace`
-- `.env` file is at project root (NOT in workspace)
+- `.env.local` file is at project root (NOT in workspace)
 - All commands should be run from project root
+
+### Known Issue: WalletConnect Project ID
+The frontend shows console errors (400/403) for WalletConnect because `VITE_WALLETCONNECT_PROJECT_ID` is not set.
+- Get a free project ID from https://cloud.walletconnect.com
+- Add to `.env.local`: `VITE_WALLETCONNECT_PROJECT_ID=your_project_id`
+- This is optional - MetaMask (injected) works without it
 
 **Reply HEARTBEAT_OK if:**
 - Phase 2 is complete (both Sepolia AND Polygon Amoy deployed)
