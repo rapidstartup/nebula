@@ -21,5 +21,20 @@
     <!-- Script to load the React application -->
     <script type="module" src="/src/main.tsx"></script>
     <!-- script.js link removed, JS logic will be in React components -->
+    <!-- VibeDash support widget -->
+    <script>
+      (function () {
+        var script = document.createElement('script');
+        script.src = 'https://vibedash.app/embed-vanilla.js';
+        script.async = true;
+        script.onload = function () {
+          window.VibeDashFeedback && window.VibeDashFeedback.init({
+            projectId: '20a02ecf-cb3c-4a3a-b646-caddbb885078',
+            webhookUrl: 'https://vibedash.app/.netlify/functions/submit-ticket/20a02ecf-cb3c-4a3a-b646-caddbb885078'
+          });
+        };
+        document.head.appendChild(script);
+      })();
+    </script>
 </body>
 </html>

@@ -22,6 +22,7 @@ import { Support } from './pages/Support';
 import { Community } from './pages/Community';
 import { Contributing } from './pages/Contributing';
 import { IssueTemplates } from './pages/IssueTemplates';
+import { Roadmap } from './pages/Roadmap';
 import { V2Dashboard } from './components/v2/V2Dashboard';
 import { wagmiConfig } from './lib/web3/config';
 import './App.css';
@@ -74,6 +75,7 @@ function App() {
             <Route path="/community" element={<Community />} />
             <Route path="/contributing" element={<Contributing />} />
             <Route path="/issue-templates" element={<IssueTemplates />} />
+            <Route path="/roadmap" element={<Roadmap />} />
             <Route path="/v2" element={<V2Dashboard />} />
             
             {/* Redirect routes */}
